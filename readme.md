@@ -30,7 +30,24 @@ This project uses a Conda environment to ensure that all dependencies are instal
 
 ### Step 1: **Create the Environment**
 
-Create the environment using the provided `environment.yml` file:
+Create the environment using the provided `environment.yml` file. Here is the content of the `environment.yml` file:
+
+```yaml
+name: pixel-regression-env
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.8
+  - numpy
+  - matplotlib
+  - scikit-learn
+  - pytorch
+  - torchvision
+  - torchaudio
+  - cudatoolkit=11.3
+  - torchsummary
 
 ```bash
 conda env create -f environment.yml
@@ -76,10 +93,11 @@ This will open the Jupyter Notebook interface in your default web browser.
 
 ## 5. **Select the Kernel in Jupyter Notebook**
 
-1. Open the notebook you want to work with, or create a new one.
-2. In the top-right corner, click on the **Kernel** menu.
-3. From the dropdown, select **Change kernel**.
-4. Choose **Python (pixel-regression-env)**.
+1. Open the notebook **`pixel_regression_project.ipynb`** you want to work with, or create a new one.
+2. In the top menu, click on the **Kernel** dropdown.
+3. Select **Change kernel** from the dropdown menu.
+4. Choose **Python (pixel-regression-env)** from the list of available kernels.
+
 
 ---
 
