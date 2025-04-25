@@ -1,67 +1,70 @@
-Apologies for the confusion! Here's a **`README.md`** file tailored to your setup for creating a Conda environment, installing the kernel, and running it on Jupyter notebook. You can copy and save it directly into your project folder as `README.md`.
+Certainly! Below is a **`README.md`** file based on the details you've provided about the **Pixel Localization with CNN** project, and it incorporates the repository link you mentioned. You can use this template to guide users through setting up the environment, running the project, and understanding the task.
 
 ---
 
 ```markdown
-# Pixel Regression Environment Setup
+# Pixel Localization with CNN
 
-This repository provides all necessary files to run the **Pixel Regression** model for segmentation tasks. Follow the steps below to set up your environment and run the Jupyter Notebook.
+This repository contains the code and implementation for the **Pixel Localization** task using a Convolutional Neural Network (CNN). The goal of this project is to build a model that predicts the exact **(x, y)** coordinates of a white pixel (value 255) placed on a black **50x50** image. This is a regression problem where the CNN learns to infer the spatial position of a visual cue.
 
-## 1. **Clone the Repository (Optional)**
+## Problem Description
 
-If you haven't already, clone the repository to your local machine using the following command:
+In this project, we aim to solve the problem of pixel localization by developing a CNN-based model. Given a black image of size **50x50**, with a single white pixel (value 255), the model predicts the coordinates **(x, y)** of this white pixel. The task involves training the model to understand the spatial distribution and map the image to its corresponding pixel coordinates.
+
+---
+
+## 1. **Clone the Repository**
+
+Clone the repository to your local machine to get started:
 
 ```bash
-git clone https://github.com/your-repository-name.git
-cd your-repository-name
+git clone https://github.com/vish1007/Pilex-Regression-Model.git
+cd Pilex-Regression-Model
 ```
+
+---
 
 ## 2. **Create and Activate the Conda Environment**
 
-This repository uses a Conda environment to ensure that all dependencies are installed correctly.
+This project uses a Conda environment to ensure that all dependencies are installed correctly. Follow the steps below to set up the environment.
 
 ### Step 1: **Create the Environment**
 
-To create the environment with all required dependencies, use the provided `environment.yml` file:
+Create the environment using the provided `environment.yml` file:
 
 ```bash
 conda env create -f environment.yml
 ```
 
-This will set up the environment with all the required libraries specified in the YAML file.
-
 ### Step 2: **Activate the Environment**
 
-Once the environment is created, activate it with the following command:
+Activate the environment after it's created:
 
 ```bash
 conda activate pixel-regression-env
 ```
 
-Make sure to replace `pixel-regression-env` with the correct environment name if it's different.
+---
 
-## 3. **Install the Jupyter Kernel for the Environment**
+## 3. **Install the Jupyter Kernel**
 
-To use this environment as a kernel in Jupyter Notebook, you need to install `ipykernel`:
+To use the environment as a kernel in Jupyter Notebook, you need to install `ipykernel`:
 
 ```bash
 conda install ipykernel
 ```
 
-### Step 1: **Add the Environment to Jupyter Notebook as a Kernel**
-
-Once `ipykernel` is installed, run the following command to add the environment as a kernel to Jupyter:
+Once installed, register the environment as a Jupyter kernel:
 
 ```bash
 python -m ipykernel install --user --name pixel-regression-env --display-name "Python (pixel-regression-env)"
 ```
 
-- `--name` is the name of the environment.
-- `--display-name` is the name that will be shown in the Jupyter interface.
+---
 
 ## 4. **Launch Jupyter Notebook**
 
-Now that the environment is ready and the kernel is installed, launch Jupyter Notebook:
+Now that the environment and kernel are set up, launch Jupyter Notebook:
 
 ```bash
 jupyter notebook
@@ -69,22 +72,44 @@ jupyter notebook
 
 This will open the Jupyter Notebook interface in your default web browser.
 
+---
+
 ## 5. **Select the Kernel in Jupyter Notebook**
 
-Once Jupyter Notebook is open, follow these steps to select the correct kernel:
-
-1. Open your desired notebook or create a new one.
+1. Open the notebook you want to work with, or create a new one.
 2. In the top-right corner, click on the **Kernel** menu.
 3. From the dropdown, select **Change kernel**.
-4. Choose **Python (pixel-regression-env)** from the list of available kernels.
+4. Choose **Python (pixel-regression-env)**.
+
+---
 
 ## 6. **Run the Notebook**
 
-With the correct kernel selected, you can now execute the cells in your notebook. To run a cell, simply press **Shift + Enter** or click the **Run** button in the toolbar.
+With the correct kernel selected, you can now run the cells in the notebook. To run a cell, press **Shift + Enter** or click the **Run** button in the toolbar.
 
-## 7. **Deactivate the Environment (Optional)**
+---
 
-When you are done, deactivate the environment with the following command:
+## 7. **Model Overview**
+
+### Architecture
+
+The model is based on a **Convolutional Neural Network (CNN)** that is designed to predict the **(x, y)** coordinates of the white pixel. The network is trained using mean squared error (MSE) loss, as the problem involves predicting continuous values for the pixel's coordinates.
+
+### Training
+
+The model is trained on synthetic images where each image contains a single white pixel at a random location on a black background (50x50 image). The network learns to map the image to the pixel's **(x, y)** coordinates.
+
+---
+
+## 8. **Model Evaluation**
+
+After training, the model's performance is evaluated on a test set of images. The predicted coordinates are compared with the ground truth using standard regression metrics (e.g., Mean Absolute Error, MSE).
+
+---
+
+## 9. **Deactivate the Environment (Optional)**
+
+When you're done, deactivate the Conda environment using:
 
 ```bash
 conda deactivate
