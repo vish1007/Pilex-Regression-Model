@@ -1,10 +1,3 @@
----
-
-```markdown
-# Pixel Localization with CNN
-
-This repository contains the code and implementation for the **Pixel Localization** task using a Convolutional Neural Network (CNN). The goal of this project is to build a model that predicts the exact **(x, y)** coordinates of a white pixel (value 255) placed on a black **50x50** image. This is a regression problem where the CNN learns to infer the spatial position of a visual cue.
-
 ## Problem Description
 
 In this project, we aim to solve the problem of pixel localization by developing a CNN-based model. Given a black image of size **50x50**, with a single white pixel (value 255), the model predicts the coordinates **(x, y)** of this white pixel. The task involves training the model to understand the spatial distribution and map the image to its corresponding pixel coordinates.
