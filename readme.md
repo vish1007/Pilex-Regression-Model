@@ -1,5 +1,3 @@
-Certainly! Below is a **`README.md`** file based on the details you've provided about the **Pixel Localization with CNN** project, and it incorporates the repository link you mentioned. You can use this template to guide users through setting up the environment, running the project, and understanding the task.
-
 ---
 
 ```markdown
